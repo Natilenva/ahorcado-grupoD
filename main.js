@@ -35,11 +35,40 @@ console.log(typeof palabraConGuionesSinComas);
 // hacer un codicional en javascript con un loop que recorra la palabra
 
 //6.1 El usuario introduce una letra.
-let letraInput = document.querySelector('#inputLetra').value;
-console.log(letraInput);
+const comprobacionLetra = document.querySelector('.my-form');
+console.log(comprobacionLetra);
+comprobacionLetra.addEventListener('submit', (e) => {e.preventDefault ()
+    const letras = comprobacionLetra.inputLetra.value;
+    console.log(letras);
+    console.log(palabraAleatoria);
+    //for (let i = 0; i < palabraAleatoria.length; i++) {
+      //if (palabraAleatoria[i].includes(letras)) {
+        //console.log('ok');
+        //console.log(palabraAleatoria[i])
+        //console.log(palabraAleatoria)
+        //console.log(palabraConGuionesSinComas)
+        //console.log(palabraConGuionesSinComas.replace(palabraConGuionesSinComas,letras]));
+        //}else{
+        //console.log('fallo');
+        //}
+    //}
+      console.log(letrasPalabraAleatoria)
+      for (let i = 0; i < letrasPalabraAleatoria.length; i++) {
+        if (letrasPalabraAleatoria[i].includes(letras)){
+          console.log('ok');
+          console.log(letrasPalabraAleatoria[i])
+          let newString = palabraConGuionesSinComas.replace(palabraConGuionesSinComas[i],letrasPalabraAleatoria[i]);
+          console.log(newString);  
+         } else{
+          console.log('fallo');
+         }
+    
+      }
+});
 
 // 7. deben visualizarse todas sus ocurrencias.
 //si la condicion se cumple debe visualizarse esa letra en la posición que corresponda, sustituyendo al guion.
+
 
 // 8.Si no está en la palabra el jugador acumula un fallo.
 // si la condicion no se cumple, no hay sustitucion de guion. Y se resta/suman los fallos.
