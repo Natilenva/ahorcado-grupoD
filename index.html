@@ -9,19 +9,22 @@
   <body>
     <h1>El ahorcado</h1>
 
-    <!-- 3. Esa palabra se debe mostrar en pantalla 
-bebe de javascript -->
-    <div id="palabra"></div>
+    <!-- 3. Esa palabra se debe mostrar en pantalla -->
+    <div id="palabra" name="palabra_en_document"></div>
 
     <!-- 5. La aplicación debe mostrar un input
-en html hacer un input con su placeholder 'dame una letra' -->
-    <form class="my-form"> 
-    <input type="text" id="inputLetra" placeholder="Dame una letra" name="inputLetra" />
-    <button id="comprobar">Comprobar</button>
+    en html hacer un input con su placeholder 'dame una letra' -->
+    <!-- <input type="text" id="inputLetra" placeholder="Dame una letra" name="valueOfAtrNameOfinput"/>
+    <button id="idButton">Comprobar</button> -->
+
+    <form class="my-form">
+      <!-- <input type="text" placeholder="Type " name="my-input"> -->
+      <input type="text" id="inputLetra" placeholder="Dame una letra" name="valueOfAtrNameOfinput"/>
+      <button id="idButton">Get Value</button>
+      <!-- <button type="reset">Borrar</button> -->
     </form>
 
     <h2>Intentos</h2>
-
     <div id="Intentos"></div>
 
     <script src="./main.js"></script>
