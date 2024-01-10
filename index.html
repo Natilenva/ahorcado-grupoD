@@ -4,9 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
     <title>El ahorcado</title>
   </head>
   <body>
+    <div class="flex-container">
+      <div>
     <h1>El ahorcado</h1>
 
     <!-- 3. Esa palabra se debe mostrar en pantalla -->
@@ -24,6 +27,7 @@
         id="inputLetra"
         placeholder="Dame una letra"
         name="valueOfAtrNameOfinput"
+        maxlength="1"
       />
       <button id="idButton">Get Value</button>
       <!-- <button type="reset">Borrar</button> -->
@@ -31,7 +35,17 @@
 
     <h2>Intentos</h2>
     <div id="Intentos">0</div>
-
+    <button id="volver-a-jugar" class="reset" type="reset">Volver A Jugar</button>
+    <div class="imagenes">
+      <img src="./assets/Imagen1.png" alt="Fallo 1" id="fallo1">
+      <img src="./assets/imagen2.png" alt="Fallo 2" id="fallo2">
+      <img src="./assets/imagen3.png" alt="Fallo 3" id="fallo3">
+      <img src="./assets/imagen4.png" alt="Fallo 4" id="fallo4">
+      <img src="./assets/imagen5.png" alt="Fallo 5" id="fallo5">
+      <img src="./assets/imagen6.png" alt="Fallo 6" id="fallo6">
+    </div>
     <script src="./main.js"></script>
+    </div>
+   </div> 
   </body>
 </html>

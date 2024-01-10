@@ -65,8 +65,6 @@ let form = document.querySelector('.my-form');
 //! variable q recupera los valores de localStorage
 let localStrg2 = '';
 let fallos = 0;
-let fallos1 = 0;
-let fallosTotal = 0;
 //* 6.1.2 crear EVENTO para cazar los valores del Formulario, en este caso el input del Formulario:
 //<input type="text" id="inputLetra" placeholder="Dame una letra" name="valueOfAtrNameOfinput"/>?
 form.addEventListener('submit', function (e) {
@@ -96,9 +94,6 @@ form.addEventListener('submit', function (e) {
     if (letra === userInput || localStrg2.includes(letra)) {
       /* console.log('ok');   */
       palabraConOcurrencias += letra;
-      fallos = 0;
-
-      console.log('if ' + fallos);
     } else {
       /* console.log('fallo'); */
       palabraConOcurrencias += '_';
@@ -111,21 +106,6 @@ form.addEventListener('submit', function (e) {
   }
 
   //Si la letra que introduce el usuario está dentro de la palabra aleatoria OR está incluida dentro del localStorage
-
-  if (palabraAleatoria.includes(userInput) || localStrg2.includes(userInput)) {
-    console.log('acierto');
-  } else {
-    fallos++;
-  }
-  console.log('fallosTotal ' + fallos);
-  // fallosTotal = fallos1 + 1;
-  // console.log('fallos fuera de for: ' + fallosTotal);
-  // function aumentarContadorFallos() {
-  //   fallos++;
-  //   document.getElementById('Intentos').textContent = fallos;
-  // }
-
-  // console.log('numero de ' + fallos);
   form.reset();
 
   //* Ver en pantalla la palabraConOcurrencias -------------------------------------------------
@@ -167,7 +147,77 @@ form.addEventListener('submit', function (e) {
   // sintaxis: localStorage.getItem(clave);
   localStrg2 = localStorage.getItem('palabraConOcurrenciasEnDOM');
   console.log('localStrg2: ' + localStrg2);
+
+  if (palabraAleatoria.includes(userInput) || localStrg2.includes(userInput)) {
+    console.log('acierto');
+  } else {
+    console.log('fallo');
+    fallos++;
+    console.log("fallos: " + fallos)
+  }
+   let fallosDOM = document.querySelector('#Intentos');
+   fallosDOM.innerHTML = fallos;
+
+  if (fallos >= 6) {
+    fallosDOM.innerHTML = 'GAME OVER'
+    inputLetra.disabled = true
+    const volverAJugar = document.querySelector('#volver-a-jugar')
+    volverAJugar.style.visibility = "visible"
+    volverAJugar.addEventListener("click", (e) => {
+      location .reload()
+      inputLetra.focus()
+    })
+  }
+  else if (!localStrg2.includes ('_')){
+    fallosDOM.innerHTML = 'GANASTE'
+    inputLetra.disabled = true
+    const volverAJugar = document.querySelector('#volver-a-jugar')
+    volverAJugar.style.visibility = "visible"
+    volverAJugar.addEventListener("click", (e) => {
+      location .reload()
+      inputLetra.focus()
+    }) 
+  }
+  const fallo1 = document.querySelector("#fallo1")
+  const fallo2 = document.querySelector("#fallo2")
+  const fallo3 = document.querySelector("#fallo3")
+  const fallo4 = document.querySelector("#fallo4")
+  const fallo5 = document.querySelector("#fallo5")
+  const fallo6 = document.querySelector("#fallo6")
+  if (fallos === 1) {
+    fallo1.style.visibility = "visible"
+  }else {
+    fallo1.style.visibility = "hidden"
+  }
+  if (fallos === 2) {
+    fallo2.style.visibility = "visible"
+  }else {
+    fallo2.style.visibility = "hidden"
+  }
+  if (fallos === 3) {
+    fallo3.style.visibility = "visible"
+  }else {
+    fallo3.style.visibility = "hidden"
+  }
+  if (fallos === 4) {
+    fallo4.style.visibility = "visible"
+  }else {
+    fallo4.style.visibility = "hidden"
+  }
+  if (fallos === 5) {
+    fallo5.style.visibility = "visible"
+  }else {
+    fallo5.style.visibility = "hidden"
+  }
+  if (fallos === 6) {
+    fallo6.style.visibility = "visible"
+  }else {
+    fallo6.style.visibility = "hidden"
+  }
+
 });
+
+
 
 //? 8.Si no está en la palabra el jugador acumula un fallo.
 // si la condicion no se cumple, no hay sustitucion de guion. Y se resta/suman los fallos.

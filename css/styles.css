@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.reset {
+    visibility: hidden;
+}
+img {
+    visibility: hidden;
+    display: flex;
+    position: absolute;
+}
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  background-color: DodgerBlue;
+}
+.flex-container > div {
+    width: 100px;
+    height: 100px;
+}
