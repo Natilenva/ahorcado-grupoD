@@ -1,24 +1,186 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.reset {
-    visibility: hidden;
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: black;
 }
-img {
-    visibility: hidden;
-    display: flex;
-    position: absolute;
+.juego {
+  margin: 3rem;
+  background-color: white;
+  border-radius: 5px;
+  height: 100vh;
+  width: auto display grid;
+  justify-content: center;
+  grid-template-areas:
+    'titulo'
+    'palabra'
+    'comprobacion'
+    'resultado'
+    'reset'
+    'ahorcado';
 }
-.flex-container {
+.titulo {
+  grid-area: titulo;
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 300px;
-  background-color: DodgerBlue;
+  padding: 2rem;
+  font-size: 2rem;
 }
-.flex-container > div {
-    width: 100px;
-    height: 100px;
+#palabra {
+  grid-area: palabra;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.comprobacion {
+  grid-area: comprobacion;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+#inputLetra {
+  height: 2rem;
+  padding: 0.5rem;
+  font-family: 'Courier New', Courier, monospace;
+}
+#idButton {
+  padding: 0.2rem 0.8rem;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  margin-left: 1rem;
+  transition: background-color 0.5s;
+}
+#idButton:hover {
+  background-color: gold;
+}
+#idButton:active {
+  background-color: gray;
+}
+
+.errores {
+  font-size: 1rem;
+  grid-area: resultado;
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+.ganar {
+  visibility: hidden;
+}
+.perder {
+  visibility: hidden;
+}
+.titulo-fallos {
+  visibility: visible;
+}
+
+.reiniciar {
+  grid-area: reset;
+  display: flex;
+  justify-content: center;
+  visibility: hidden;
+  padding: 2rem;
+}
+.reset {
+  padding: 0.2rem 0.8rem;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  transition: backaground-color 0.5s;
+}
+.reset:hover {
+  background-color: gold;
+}
+.reset:active {
+  background-color: gray;
+}
+
+.imagenes {
+  grid-area: ahorcado;
+  display: flex;
+  justify-content: center;
+  padding-top: 6rem;
+}
+
+img {
+  padding: 1rem;
+  visibility: hidden;
+  display: flex;
+  position: absolute;
+  margin-top: -150px;
+}
+
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+#text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  color: white;
+  font-weight: 800;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+#overlay2 {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+#text2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  color: white;
+  font-weight: 800;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+#cuenta-atras {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  font-size: 50px;
+  color: red;
+  font-weight: 800;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+#cuenta-atras2 {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  font-size: 50px;
+  color: red;
+  font-weight: 800;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
 }
