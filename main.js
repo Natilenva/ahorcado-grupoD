@@ -35,7 +35,7 @@ form.addEventListener('submit', function (e) {
   e.preventDefault();
 
   //*cazando valor del input
-  let userInput = form.valueOfAtrNameOfinput.value;
+  let userInput = form.valueOfAtrNameOfinput.value.toLowerCase();
   console.log('LETRA Q INTRODUCE EL USUARIO: ' + userInput);
 
   let palabraConOcurrencias = '';
@@ -122,8 +122,8 @@ form.addEventListener('submit', function (e) {
   fallosDOM.innerHTML = fallos;
 
   if (fallos >= 6) {
-    // fallosDOM.innerHTML = 'Game Over';
-    document.getElementById('overlay2').style.display = 'block';
+    document.querySelector('#text').innerHTML = 'GAME OVER';
+    document.getElementById('overlay').style.display = 'block';
     setTimeout(myFunction, 6000);
     function myFunction() {
       location.reload(true);
@@ -132,7 +132,7 @@ form.addEventListener('submit', function (e) {
     let totalTime = 5;
 
     function updateClock() {
-      document.getElementById('cuenta-atras2').innerHTML = totalTime;
+      document.getElementById('cuenta-atras').innerHTML = totalTime;
 
       if (totalTime === 0) {
         console.log('Final');
@@ -154,7 +154,7 @@ form.addEventListener('submit', function (e) {
     //   inputLetra.focus();
     // });
   } else if (!localStrg2.includes('_')) {
-    // fallosDOM.innerHTML = 'Ganaste';
+    document.querySelector('#text').innerHTML = 'WINNER';
     document.getElementById('overlay').style.display = 'block';
     setTimeout(myFunction, 6000);
     function myFunction() {
