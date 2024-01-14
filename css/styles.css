@@ -21,18 +21,19 @@ body {
 }
 .titulo {
   /* border: 3px dashed green; */
-  grid-area: titulo;
+  /* grid-area: titulo; */
   display: flex;
   justify-content: center;
   padding: 2rem;
   font-size: 1.8rem;
 }
 #palabra {
-  /* border: 3px dashed blue; */
+  border: 3px dashed blue;
   /* grid-area: palabra; */
   display: flex;
   justify-content: center;
   padding: 1rem;
+  /* font-size: 1.8rem; */
 }
 
 .comprobacion {
