@@ -1,13 +1,9 @@
-BIENVENIDOS AL JUEGO DEL AHORCADO
+¡Bienvenidos al Juego del Ahorcado!
 
-Este juego consiste en adivinar las letras que conforman la palabra oculta en la secuencia de guiones.
-El participante dispondrá de 6 oportunidades para adivinar, letra a letra, una de dichas palabras, las cuales, están asociadas al mundo de la programación.
+Este divertido juego te desafía a adivinar la palabra oculta relacionada con el mundo de la programación. Tienes 6 oportunidades para adivinar cada letra de la palabra. Si llegas a 6 fallos, perderás el juego, pero si logras adivinar la palabra antes de agotar tus oportunidades, ¡ganarás la partida!
 
-Una vez alcanzado los 6 fallos, habrá perdido el juego. Por el contrario, si acierta la palabra antes de consumir todas las oportunidades disponibles, habrá ganado la partida.
-La dinámica del juego es muy sencilla.
+La dinámica es simple: elige una letra y descubre si está en la palabra oculta. Si la letra no está, consumirás un fallo y el juego te mostrará cómo avanza el dibujo del ahorcado. Si la letra está en la palabra, se mostrará en todas las posiciones donde aparezca.
 
-Deberá pensar en una letra y comprobar si se encuentra en la palabra oculta. Si dicha letra no está, habrá consumido un fallo y el juego le mostrará cómo avanza el dibujo del ahorcado. En el caso de que la letra se encuentre en la palabra, se mostrará dicha letra en la posición en la que se encuentre y tantas veces como aparezca en la palabra oculta.
-
-Tanto si ha perdido la partida como si ha ganado, aparecerá un mensaje final con una cuenta atrás que, una vez finalizada, reiniciará la partida.
+Ya sea que ganes o pierdas, al final del juego verás un mensaje con una cuenta atrás que, una vez finalizada, reiniciará la partida para que puedas seguir divirtiéndote.
 
 Dicho esto, piense en conceptos relacionados con la programación web y... Buena suerte!
