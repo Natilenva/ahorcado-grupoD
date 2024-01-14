@@ -9,7 +9,7 @@ const palabras = [
   'debugger',
   'programacion',
   'codear',
-  'pseudocódigo',
+  'pseudocodigo',
 ];
 
 let localStrg2 = '';
