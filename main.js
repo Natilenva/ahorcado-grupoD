@@ -65,9 +65,7 @@ form.addEventListener('submit', function (e) {
   );
   localStrg2 = localStorage.getItem('palabraConOcurrenciasEnDOM');
 
-  if (
-    !(palabraAleatoria.includes(userInput) || localStrg2.includes(userInput))
-  ) {
+  if (!palabraAleatoria.includes(userInput)) {
     fallos++;
     for (let i = 1; i <= 6; i++) {
       const fallo = document.querySelector(`#fallo${i}`);
