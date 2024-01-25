@@ -1,93 +1,105 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,700;6..12,900&display=swap');
+
+
+colorsX {
+  color: black;
+  color: #F5F5F7;
+  color: rgb(245, 245, 247);
+  color: #F5F5F7;
+  color: #FFF689;
+  color: #FFF285;
+  color: #CCB227;
+  color: #CC9B28;
+
+  color: #0B090A;
+}
+
+/* Reset ================================================================================================================== */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0;/*  suprimes los márgenes predeterminados que los navegadores podrían asignar a ciertos elementos */
+  padding: 0;/* eliminando los espacios internos predeterminados que los navegadores podrían asignar a ciertos elementos. */
+  box-sizing: border-box;/* establece que tanto el ancho como el alto de un elemento incluyen el 'padding' y 'border', */
 }
 
-body {
-  font-family: 'Courier New', Courier, monospace;
-  background-color: black;
-  min-width: 425px;
-}
-.juego {
-  background-color: white;
-  border-radius: 5px;
-  height: 85vh;
+body{
+  font-family: 'Nunito', sans-serif;
+  
+  background-color: #0B090A;
 
-  margin: 3rem;
-  width: auto;
+  text-align: center;
+  color: #F5F5F7;
 }
-.titulo {
+
+.container {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; /* cómo se distribuyen los elementos flexibles a lo largo del eje transversal de la línea actual. */
+  justify-content: center; /* define la alineación a lo largo del eje principal. */
+
+  height: 100dvh;
+}
+
+/*!  -----------------------------------------------------*/
+h1 {
+  height: 10dvh; 
+  
+  /* * Center Vertically - Using Flexbox */
   display: flex;
   justify-content: center;
-  padding: 2rem;
-  font-size: 1.8rem;
+  align-items: center;
+
+  font-size: 8dvh; 
+  
+  font-weight: 700;
+  color: #F5F5F7;
+
 }
+
+/*! .section2  -----------------------------------------------------*/
 #palabra {
+  height: 10dvh; 
+
+  /* * Center Vertically - Using Flexbox */
   display: flex;
   justify-content: center;
-  padding: 1rem;
+  align-items: center;
+
+  font-size: 3dvh;
+  font-weight: 400;
 }
 
-.comprobacion {
+/*! .section3  -----------------------------------------------------*/
+.section3 {
+  height: 10dvh; 
+
+  /* * Center Vertically - Using Flexbox */
   display: flex;
   justify-content: center;
-  padding: 1rem;
+  align-items: center;
+
+  font-weight: 400;
+  color: #F5F5F7;
 }
-#inputLetra {
-  height: 2rem;
-  padding: 0.5rem;
-  font-family: 'Courier New', Courier, monospace;
-  border-radius: 5px;
+input[type=text] {
+  all: unset;
+  font-size: 3dvh;
+  caret-color: #CC9B28;
+  background-color: #0B090A;
 }
-#inputLetra:focus {
-  border: 4px solid gold;
+::placeholder {
+  text-align: center;
+  color: #F5F5F7;
 }
 
-#inputLetras::placeholder {
-  color: gold;
-}
-#idButton {
-  padding: 0.2rem 0.8rem;
-  font-family: 'Courier New', Courier, monospace;
-  background-color: black;
-  color: white;
-  border-radius: 5px;
-  margin-left: 1rem;
-  transition: background-color 0.5s;
-}
-#idButton:hover {
-  background-color: gold;
-}
-#idButton:active {
-  background-color: gray;
-}
-
-.errores {
-  font-size: 1rem;
-  display: flex;
-  justify-content: center;
-}
-
-.imagenes {
-  display: flex;
-  justify-content: center;
-  padding-top: 6rem;
-  max-width: 100%;
-  height: auto;
-}
-
+/*!   -----------------------------------------------------*/
 img {
-  width: 250px;
-  padding: 1rem;
-  visibility: hidden;
-  display: flex;
-  position: absolute;
-  margin-top: -90px;
-  max-width: 100%;
-  height: auto;
+  height: 34dvh; 
+  background-color: #CC9B28;
 }
 
+/*!   -----------------------------------------------------*/
 #overlay {
   position: fixed;
   display: none;
@@ -106,7 +118,8 @@ img {
   top: 50%;
   left: 50%;
   font-size: 50px;
-  color: white;
+  /* color: white; */
+  color: #F5F5F7;
   font-weight: 800;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -118,8 +131,15 @@ img {
   top: 60%;
   left: 50%;
   font-size: 50px;
-  color: gold;
+  /* color: gold; */
+  
+  color: #FFF689;
+  color: #FFF285;
+  color: #CCB227;
+  /* color: #CC9B28; */
+
   font-weight: 800;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
 }
+

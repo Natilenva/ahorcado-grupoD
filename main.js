@@ -1,28 +1,28 @@
 'use strict';
+
 import { overlayClok } from './functions.js';
-const palabras = [
-  'checkbox',
-  'flexbox',
-  'padding',
-  'javascript',
-  'booleanos',
-  'debugger',
-  'programacion',
-  'codear',
-  'pseudocodigo',
-];
+
+
+
+const imagesArray = ["./assets/ahorcadito0.png", "./assets/design6.png", "./assets/Diseño5.png", 
+                 "./assets/Diseño4.png", "./assets/Diseño3.png", "./assets/Diseño2.png", "./assets/Diseño1.png"];
+//design6
+
+const palabras = ['checkbox','flexbox','padding','javascript','booleanos','debugger','programacion','codear','pseudocodigo'];
+/* const palabras = ['js','css']; */
 
 let localStrg2 = '';
 let fallos = 0;
 
-let form = document.querySelector('.my-form');
-
+let form = document.querySelector('.section3');  
 document.querySelector('#inputLetra').focus();
 
-//  palabraAleatoria
-const palabraAleatoria = palabras[Math.floor(Math.random() * palabras.length)];
-console.log('2:palabraAleatoria: ' + palabraAleatoria);
 
+//? palabraAleatoria 
+const palabraAleatoria = palabras[Math.floor(Math.random() * palabras.length)];
+console.log('palabraAleatoria: ' + palabraAleatoria);
+
+//? innerHTML palabraConGuiones --------------------
 let palabraConGuionesSinComas = '';
 
 for (let char of palabraAleatoria) {
@@ -32,58 +32,59 @@ for (let char of palabraAleatoria) {
 let palabraHtml = document.querySelector('#palabra');
 palabraHtml.innerHTML = palabraConGuionesSinComas;
 
-//  Event
+//?  Event ============================================================================================================= 
 form.addEventListener('submit', function (e) {
   e.preventDefault();
 
   //*cazando valor del input
-  let userInput = form.valueOfAtrNameOfinput.value.toLowerCase();
+  let userInput = form.atrNameOfInput.value.toLowerCase();
+  console.log('userInput: '+userInput);
 
   form.reset();
   inputLetra.focus();
 
+  //? palabraConOcurrencias --------------------------------------------------------------------------------------
   let palabraConOcurrencias = '';
 
   for (const letra of palabraAleatoria) {
+    //si la letra no está en palabraAleatoria q se cree palabraConOcurrencias con localStorage
     if (letra === userInput || localStrg2.includes(letra)) {
       palabraConOcurrencias += letra;
     } else {
       palabraConOcurrencias += '_';
     }
   }
-
-  let palabraConOcurrenciasArray = palabraConOcurrencias.split('');
+  //? palabraConOcurrencias (innerHTML) -------------------------------------------------------------------------
+  // split() method splits/divide a string into an array of substrings.
+  let palabraConOcurrenciasArray = palabraConOcurrencias.split(''); // divide a string into characters
+  // join() - une todos los elementos de una matriz (o un objeto similar a una matriz) en un string y lo devuelve 
+  //   Return: a string, the array values, separated by the specified separator 
   let palabraConOcurrenciasYespacios = palabraConOcurrenciasArray.join(' ');
 
   const palabraConOcurrenciasEnDOM = document.querySelector('#palabra');
   palabraConOcurrenciasEnDOM.innerHTML = palabraConOcurrenciasYespacios;
 
-  // PERSISTENCIA DE DATOS
-  localStorage.setItem(
-    'palabraConOcurrenciasEnDOM',
-    palabraConOcurrenciasYespacios
-  );
+  //? PERSISTENCIA DE DATOS --------------------------------------------------------------------------------------------
+  localStorage.setItem('palabraConOcurrenciasEnDOM',palabraConOcurrenciasYespacios);
   localStrg2 = localStorage.getItem('palabraConOcurrenciasEnDOM');
+  console.log('localStorage: '+localStrg2);
 
-  if (!palabraAleatoria.includes(userInput)) {
+  //? FALLOS ------------------------------------------------------------------------------------------------------------
+    if ( !(palabraAleatoria.includes(userInput)) ) {
     fallos++;
-    for (let i = 1; i <= 6; i++) {
-      const fallo = document.querySelector(`#fallo${i}`);
-      fallo.style.visibility = fallos === i ? 'visible' : 'hidden';
-    }
+      const imgHtml = document.getElementById('mainImage');
+      imgHtml.src = imagesArray[fallos];
   }
-  //FALLOS
-  let fallosDOM = document.querySelector('#fallosID');
-  fallosDOM.innerHTML = fallos;
 
-  // PERDER ***
+  //? PERDER ----------------------------------------------
   if (fallos >= 6) {
     document.querySelector('#text').innerHTML = 'GAME OVER';
     overlayClok();
   }
-  // GANAR ***
+  //? GANAR ----------------------------------------------
   else if (!palabraConOcurrenciasYespacios.includes('_')) {
     document.querySelector('#text').innerHTML = 'WINNER';
     overlayClok();
   }
-});
+}
+);

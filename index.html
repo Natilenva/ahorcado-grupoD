@@ -8,42 +8,26 @@
     <title>Ahorcado</title>
   </head>
   <body>
-    <div class="juego">
-      <header class="titulo">
-        <h1>Ahorcado</h1>
-      </header>
 
-      <main id="palabra" name="palabra_en_document">_</main>
+    <div class="container">
 
-      <form class="my-form">
-        <section class="comprobacion">
-          <input
-            type="text"
-            id="inputLetra"
-            placeholder="Dame una letra..."
-            name="valueOfAtrNameOfinput"
-            maxlength="1"
-            autocomplete="off"
-          />
-          <button type="submit" id="idButton">Comprobar</button>
-        </section>
-        <section class="errores">
-          <h2>Fallos = <span id="fallosID">0</span></h2>
-        </section>
-        <div id="overlay">
-          <div id="text"></div>
-          <div id="cuenta-atras"></div>
-        </div>
+      <h1>Ahorcado</h1>  
+
+      <p id="palabra">_</p>
+
+      <form class="section3">
+          <input type="text" id="inputLetra" placeholder="..." name="atrNameOfInput" maxlength="1" autocomplete="off"/>
       </form>
-      <div class="imagenes">
-        <img id="fallo1" src="./assets/Diseño6.png" alt="fallo1" />
-        <img id="fallo2" src="./assets/Diseño5.png" alt="fallo2" />
-        <img id="fallo3" src="./assets/Diseño4.png" alt="fallo2" />
-        <img id="fallo4" src="./assets/Diseño3.png" alt="fallo4" />
-        <img id="fallo5" src="./assets/Diseño2.png" alt="fallo5" />
-        <img id="fallo6" src="./assets/Diseño1.png" alt="fallo6" />
-      </div>
+
+      <img src="./assets/ahorcadito0.png" id="mainImage" >
+
     </div>
+
+    <div id="overlay">
+      <div id="text"></div>
+      <div id="cuenta-atras"></div>
+    </div>
+
     <script type="module" src="./main.js"></script>
   </body>
 </html>
